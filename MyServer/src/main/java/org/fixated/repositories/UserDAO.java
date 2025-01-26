@@ -20,10 +20,10 @@ public class UserDAO {
         return template.query(sql,new UserRowMapper());
     }
 
-    public User findUserByMail(String mail){
+    public User findUserByName(String name){
         try{
-            String sql = "SELECT * FROM users WHERE mail = ?";
-            return template.queryForObject(sql,new UserRowMapper(),mail);
+            String sql = "SELECT * FROM users WHERE name = ?";
+            return template.queryForObject(sql,new UserRowMapper(),name);
         }
         catch (EmptyResultDataAccessException e){
             return null;

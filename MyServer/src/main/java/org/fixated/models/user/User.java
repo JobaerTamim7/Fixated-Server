@@ -6,7 +6,7 @@ public abstract class User {
     private String mail;
     private String name;
     private String password;
-    private Role role;
+    private String role;
 
     public Integer getId() {
         return id;
@@ -40,10 +40,18 @@ public abstract class User {
         this.password = password;
     }
 
-    public abstract Role getRole();
+    public abstract String getRole();
     public void setRole(){
         this.role = getRole();
     }
+
+    public void setWorkerID(String workerID){}
+    public void setPhoneNumber(String phone){}
+    public void setBranch(String branchCode){}
+    public abstract String getBranch();
+    public abstract String getWorkerID();
+    public abstract String getPhoneNumber();
+
 
     @Override
     public String toString() {

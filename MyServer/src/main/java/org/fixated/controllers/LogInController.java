@@ -1,7 +1,7 @@
 package org.fixated.controllers;
 
 import org.fixated.models.response.ApiResponse;
-import org.fixated.models.response.AuthRequest;
+import org.fixated.models.request.AuthRequest;
 import org.fixated.models.response.ResponseFactory;
 import org.fixated.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api")
 public class LogInController {
     private final UserService userService;
 
@@ -20,16 +20,16 @@ public class LogInController {
         this.userService = userService;
     }
 
-    @PostMapping("/auth")
-    public ResponseEntity<ApiResponse> userAuth(@RequestBody AuthRequest authRequest){
+    @PostMapping("/login")
+    public ResponseEntity<ApiResponse> worker(@RequestBody AuthRequest authRequest) {
         try{
-            userService.authUser(authRequest.getMail(),authRequest.getPassword());
+            userService.userValidation(authRequest);
             return ResponseFactory.createResponse("Log in successful",HttpStatus.OK);
 
         } catch (IllegalArgumentException e) {
             return ResponseFactory.createResponse(e.getMessage(),HttpStatus.UNAUTHORIZED);
         } catch (Exception e) {
-            return ResponseFactory.createResponse(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseFactory.createResponse(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
