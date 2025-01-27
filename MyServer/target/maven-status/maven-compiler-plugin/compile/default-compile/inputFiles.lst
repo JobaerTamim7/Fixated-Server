@@ -1,12 +1,13 @@
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\controllers\LogInController.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\AuthRequest.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\CustomerAuthRequest.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\WorkerAuthRequest.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\response\ApiResponse.java
-C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\response\AuthRequest.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\response\ResponseFactory.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\user\AdminUser.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\user\CustomerUser.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\user\EmployeeUser.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\user\ManagerUser.java
-C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\user\Role.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\user\User.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\user\UserFactory.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\repositories\UserDAO.java

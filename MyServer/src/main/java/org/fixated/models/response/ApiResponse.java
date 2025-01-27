@@ -17,4 +17,9 @@ public class ApiResponse {
         this.status = status;
         this.timestamp = Instant.now();
     }
+
+    @Override
+    public String toString() {
+        return "ApiResponse[message=" + message + ", timestamp=" + timestamp + ", status=" + status + "]";
+    }
 }

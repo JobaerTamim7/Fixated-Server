@@ -1,23 +1,24 @@
-package org.fixated.models.request;
+package org.fixated.models.request.add;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
-public class WorkerAuthRequest extends AuthRequest{
+public class WorkerAddRequest extends AddUserRequest{
     private String phoneNumber;
     private String workerID;
     private String branchCode;
 
     @JsonCreator
-    public WorkerAuthRequest(
+    public WorkerAddRequest(
             @JsonProperty("user_name") String name,
             @JsonProperty("password") String password,
+            @JsonProperty("mail") String mail,
             @JsonProperty("role") String role,
             @JsonProperty("phone_no") String phoneNumber,
             @JsonProperty("worker_id") String workerID,
-            @JsonProperty("branch_code") String branchCode) {
-        super(name, password,role);
+            @JsonProperty("branch_code") String branchCode
+    ) {
+        super(name, password, mail, role);
         this.phoneNumber = phoneNumber;
         this.workerID = workerID;
         this.branchCode = branchCode;
@@ -49,7 +50,6 @@ public class WorkerAuthRequest extends AuthRequest{
 
     @Override
     public String toString() {
-        return "AuthRequest[ " + super.toString() + "[ WorkerAuthRequest [phoneNumber=" + phoneNumber + ", workerID=" + workerID + ", branchCode=" + branchCode + "]";
+        return super.toString() + "Subclass : WorkerAddRequest [phoneNumber=" + phoneNumber + ", workerID=" + workerID + ", branchCode=" + branchCode + "]";
     }
-
 }

@@ -55,12 +55,15 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "User[" +
                 "id=" + id +
                 ", mail='" + mail + '\'' +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
-                ", role=" + role +
-                '}';
+                ", role=" + role + '\'' +
+                ", phone no=" + getPhoneNumber() + '\'' +
+                ", branch=" + getBranch() + '\'' +
+                ", workerID=" + getWorkerID() + '\'' +
+                ']';
     }
 }

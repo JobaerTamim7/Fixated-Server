@@ -13,12 +13,12 @@ public class CustomerUser extends User {
 
     @Override
     public String getWorkerID() {
-        return "";
+        return null;
     }
 
     @Override
     public String getPhoneNumber() {
-        return "";
+        return null;
     }
 
 }

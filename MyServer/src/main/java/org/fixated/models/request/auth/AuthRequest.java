@@ -1,4 +1,4 @@
-package org.fixated.models.request;
+package org.fixated.models.request.auth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;

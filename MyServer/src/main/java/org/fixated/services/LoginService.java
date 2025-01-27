@@ -1,21 +1,19 @@
 package org.fixated.services;
 
-import org.fixated.models.request.AuthRequest;
-import org.fixated.models.request.WorkerAuthRequest;
+import org.fixated.models.request.auth.AuthRequest;
+import org.fixated.models.request.auth.WorkerAuthRequest;
 import org.fixated.models.user.User;
 import org.fixated.repositories.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
-
 @Service
-public class UserService {
+public class LoginService {
 
     private final UserDAO userDAO;
 
     @Autowired
-    public UserService(UserDAO userDAO) {
+    public LoginService(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 
