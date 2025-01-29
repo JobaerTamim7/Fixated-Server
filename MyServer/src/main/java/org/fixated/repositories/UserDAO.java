@@ -6,6 +6,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -14,11 +15,6 @@ public class UserDAO {
 
     public UserDAO(JdbcTemplate template){
         this.template = template;
-    }
-
-    public List<User> findAllUser(){
-        String sql = "SELECT * FROM  users";
-        return template.query(sql,new UserRowMapper());
     }
 
     public User findUserByName(String name){
@@ -31,8 +27,12 @@ public class UserDAO {
         }
     }
 
-    private boolean checkUserExists(String name){
-        String sql = "SELECT COUNT(*) FROM  users WHERE name = ?";
+    private boolean checkUserExists(String name, String table){
+        List<String> tables = List.of("users","temp_users");
+        if(!tables.contains(table)){
+            throw new IllegalArgumentException("Table " + table + " does not exist");
+        }
+        String sql = String.format("SELECT COUNT(*) FROM %s WHERE name LIKE ?", table);
         Integer count = template.queryForObject(sql,Integer.class,name);
         return count > 0;
     }
@@ -53,7 +53,7 @@ public class UserDAO {
 
                 throw new DuplicateKeyException("User with this mail already exists");
             }
-            if (checkUserExists(user.getName().toLowerCase())){
+            if (checkUserExists(user.getName().toLowerCase(),"users")){
                 throw new DuplicateKeyException("User with this name already exists");
             }
 
@@ -68,7 +68,46 @@ public class UserDAO {
 
         }
         catch (Exception e){
-            System.out.println(e.getMessage()) ;
+            throw e;
+        }
+    }
+
+    public void addTempWorkerUser(User user){
+        String sql = "INSERT INTO temp_users "+
+                "(branch_id, role, name, worker_id) "+
+                "VALUES (?, ?, ?, ?)";
+        try {
+            if (checkUserExists(user.getName().toLowerCase(),"temp_users")){
+                throw new DuplicateKeyException("User with this name already exists");
+            }
+            template.update(sql,
+                        user.getBranch(),
+                        user.getRole().toLowerCase(),
+                        user.getName().toLowerCase(),
+                        user.getWorkerID()
+                    );
+        } catch (Exception e){
+            throw e;
+        }
+
+    }
+
+
+    public void validateTempWorker(User user){
+        String sql = "SELECT COUNT(*) FROM temp_users WHERE branch_id = ? AND role = ? AND name = ? AND worker_id = ?";
+        String delete = "DELETE FROM temp_users WHERE branch_id = ? AND role = ? AND name = ? AND worker_id = ?";
+        try {
+            int count = template.queryForObject(sql,Integer.class,user.getBranch(),user.getRole().toLowerCase(),user.getName(), user.getWorkerID());
+            if (count == 0){
+                throw new DuplicateKeyException("Not valid credentials");
+            }
+            template.update(delete,
+                    user.getBranch(),
+                    user.getRole().toLowerCase(),
+                    user.getName(),
+                    user.getWorkerID());
+
+        } catch (Exception e){
             throw e;
         }
     }

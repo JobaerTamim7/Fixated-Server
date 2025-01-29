@@ -1,7 +1,12 @@
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\controllers\AddUser.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\controllers\LogInController.java
-C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\AuthRequest.java
-C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\CustomerAuthRequest.java
-C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\WorkerAuthRequest.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\controllers\SignUpController.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\add\AddUserRequest.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\add\CustomerAddRequest.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\add\WorkerAddRequest.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\auth\AuthRequest.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\auth\CustomerAuthRequest.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\request\auth\WorkerAuthRequest.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\response\ApiResponse.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\response\ResponseFactory.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\models\user\AdminUser.java
@@ -13,4 +18,6 @@ C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\ja
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\repositories\UserDAO.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\repositories\UserRowMapper.java
 C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\Server.java
-C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\services\UserService.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\services\AddUserService.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\services\LoginService.java
+C:\Users\Tamim\Desktop\fixated-restaurannt\MyServer-fixated\MyServer\src\main\java\org\fixated\services\SignupService.java

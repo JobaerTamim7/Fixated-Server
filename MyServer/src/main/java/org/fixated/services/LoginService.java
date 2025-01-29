@@ -62,7 +62,7 @@ public class LoginService {
                         authRequest.getPhoneNumber().equals(user.getPhoneNumber());
 
         if (!isOK) {
-            throw new IllegalArgumentException("Wrong Credentials");
+            throw new IllegalArgumentException("Wrong Credentials " + user.toString());
         }
     }
 

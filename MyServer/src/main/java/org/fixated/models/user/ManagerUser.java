@@ -38,4 +38,9 @@ public class ManagerUser extends User {
     public String getBranch() {
         return this.branchCode;
     }
+
+    @Override
+    public void setBranch(String branchCode) {
+        this.branchCode = branchCode;
+    }
 }

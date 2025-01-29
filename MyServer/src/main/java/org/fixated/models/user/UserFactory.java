@@ -48,8 +48,10 @@ public class UserFactory {
             user.setWorkerID(((WorkerAddRequest) addUserRequest).getWorkerID());
             user.setPhoneNumber(((WorkerAddRequest) addUserRequest).getPhoneNumber());
             user.setBranch(((WorkerAddRequest) addUserRequest).getBranchCode());
+            System.out.println(user.getBranch());
         }
         user.setRole();
+
         return user;
     }
 }

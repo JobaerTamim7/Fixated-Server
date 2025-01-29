@@ -2,8 +2,10 @@ package org.fixated.controllers;
 
 
 import org.fixated.models.request.add.AddUserRequest;
+import org.fixated.models.request.add.WorkerAddRequest;
 import org.fixated.models.response.ApiResponse;
 import org.fixated.models.response.ResponseFactory;
+import org.fixated.models.user.CustomerUser;
 import org.fixated.models.user.User;
 import org.fixated.models.user.UserFactory;
 import org.fixated.services.SignupService;
@@ -26,7 +28,14 @@ public class SignUpController {
     public ResponseEntity<ApiResponse> signup(@RequestBody AddUserRequest addUserRequest) {
         try {
             User user = UserFactory.getUser(addUserRequest);
-            signupService.addCustomerUser(user);
+            if (addUserRequest instanceof WorkerAddRequest){
+                signupService.addWorkerUser(user);
+                return ResponseFactory.createResponse("Successfully verified and added", HttpStatus.CREATED);
+            }
+            else {
+                signupService.addCustomerUser(user);
+            }
+
             return ResponseFactory.createResponse("User added successfully", HttpStatus.CREATED);
         } catch (Exception e) {
             return ResponseFactory.createResponse(e.getMessage(), HttpStatus.BAD_REQUEST);

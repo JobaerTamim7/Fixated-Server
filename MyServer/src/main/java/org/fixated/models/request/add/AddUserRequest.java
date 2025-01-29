@@ -12,7 +12,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonSubTypes({
         @JsonSubTypes.Type(value = CustomerAddRequest.class, name = "customer"),
-        @JsonSubTypes.Type(value = WorkerAddRequest.class, name = "worker")
+        @JsonSubTypes.Type(value = WorkerAddRequest.class, name = "worker"),
+        @JsonSubTypes.Type(value = AddTempUserRequest.class, name = "temp_user")
 })
 
 public class AddUserRequest {
