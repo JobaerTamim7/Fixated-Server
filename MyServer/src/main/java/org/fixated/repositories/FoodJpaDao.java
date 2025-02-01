@@ -11,3 +11,4 @@ public interface FoodJpaDao extends JpaRepository<FoodItem,Integer> {
     List<FoodItem> findByCategory(String foodName);
 }
 
+

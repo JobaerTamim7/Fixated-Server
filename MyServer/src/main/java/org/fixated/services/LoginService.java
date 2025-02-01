@@ -53,6 +53,7 @@ public class LoginService {
         boolean isEmpty =   authRequest.getPhoneNumber().isEmpty() ||
                             authRequest.getWorkerID().isEmpty() ||
                             authRequest.getBranchCode().isEmpty();
+
         if (isEmpty) {
             throw new IllegalArgumentException("Fill up the credentials");
         }

@@ -99,13 +99,14 @@ public class UserDAO {
         try {
             int count = template.queryForObject(sql,Integer.class,user.getBranch(),user.getRole().toLowerCase(),user.getName(), user.getWorkerID());
             if (count == 0){
-                throw new DuplicateKeyException("Not valid credentials");
+                throw new DuplicateKeyException("Not valid credentials " + user.toString());
             }
-            template.update(delete,
-                    user.getBranch(),
-                    user.getRole().toLowerCase(),
-                    user.getName(),
-                    user.getWorkerID());
+                template.update(delete,
+                        user.getBranch(),
+                        user.getRole().toLowerCase(),
+                        user.getName(),
+                        user.getWorkerID());
+
 
         } catch (Exception e){
             throw e;

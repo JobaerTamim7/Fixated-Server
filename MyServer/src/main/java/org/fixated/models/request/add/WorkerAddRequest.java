@@ -14,7 +14,7 @@ public class WorkerAddRequest extends AddUserRequest{
             @JsonProperty("password") String password,
             @JsonProperty("mail") String mail,
             @JsonProperty("role") String role,
-            @JsonProperty("phone_no") String phoneNumber,
+            @JsonProperty("phone_number") String phoneNumber,
             @JsonProperty("worker_id") String workerID,
             @JsonProperty("branch_code") String branchCode
     ) {
